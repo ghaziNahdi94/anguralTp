@@ -1,0 +1,26 @@
+<div class="root" *ngIf="livre">
+  
+ 
+ 
+ <div  id="left"> 
+ <img  [src]="livre.image" height="370" width="300" class="img-thumbnail" />
+ </div>
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+ <div id="right">
+ 
+ <p><span class="title">{{livre.titre}}</span></p>
+ <p>Auteur : {{auteur}}</p>
+ <p>Version papier  <button class="btn-warning"  (click)="ajouterAuPanier(true)"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;{{livre.prixPhysique | currency:'EUR':'symbole'}}</button></p>
+ <p>Version electronique    <button class="btn-info" (click)="ajouterAuPanier(false)"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;{{livre.prixElectronique | currency:'EUR':'symbole'}}</button></p>
+<p>Description : <span class="description">{{livre.description}}</span></p>
+ <p><span class="stock"><span class="n">{{stock}}</span>  livres version papier sont disponibles !</span></p>
+ 
+ 
+ 
+ </div>
+ 
+ </div>

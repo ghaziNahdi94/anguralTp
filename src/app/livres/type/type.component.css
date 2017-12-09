@@ -1,0 +1,25 @@
+#root{
+cursor: pointer;
+max-width: 327px;
+border: rgba(124, 124, 124, 0.521) 1px solid;
+min-height: 470px;
+max-height: 470px;
+
+}
+
+p{
+margin-top: 20px;
+font-size: 13px;
+color: black;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+height: 70px;
+}
+
+img{
+    width: 100%;
+}
+
+button{
+    font-family: Cochin, Georgia, Times, Times New Roman, serif;
+      margin-bottom: 20px;
+}

@@ -1,0 +1,26 @@
+<div class="root">
+ 
+
+
+<div  id="left"> 
+<img [src]="link" height="270" width="200" class="img-thumbnail" (click)="goDetails(titre)"/>
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+<div id="right">
+
+<p><a><span class="title" (click)="goDetails(titre)">{{titre}}</span></a></p>
+<p>Auteur : {{auteur}}</p>
+<p>Version papier  <button class="btn-warning" (click)="ajouterAuPanier(true)"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;{{prixPhysique | currency:'EUR':'symbole'}}</button></p>
+<p>Version electronique    <button class="btn-info" (click)="ajouterAuPanier(false)"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;{{prixElectronique | currency:'EUR':'symbole'}}</button></p>
+<p>Genre : {{genre}}</p><br>
+<p><span class="stock"><span class="n">{{stock}}</span>  livres version papier sont disponibles !</span></p>
+
+
+
+</div>
+
+</div>

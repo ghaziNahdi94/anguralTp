@@ -1,0 +1,51 @@
+
+<p id="vide" *ngIf="livres.length == 0" id="vide">Le panier est vide</p>
+<div id="rout"  *ngIf="livres.length != 0">
+    
+<div>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th id="votre">Votre panier</th>
+            <th>prix</th>
+            <th>Quantité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let l of livres">
+            <td id="un">
+            
+              <div id="left">
+              <img [src]="l.image" width="80" height="110"/>
+              </div>
+            
+              <div id="right">
+              <p class="t">{{l.titre}}</p>
+              <p *ngIf="l.choixPhysique">Version papier</p>
+              <p *ngIf="!l.choixPhysique">Version electronique</p>
+              <button class="btng" (click)="removeFromPanier(l.titre,l.choixPhysique)">Supprimer</button>
+            </div>
+            
+            </td>
+            <td *ngIf="l.choixPhysique">{{l.prixPhysique | currency:'EUR':'symbole'}}</td>
+            <td *ngIf="!l.choixPhysique">{{l.prixElectronique | currency:'EUR':'symbole'}}</td>
+            <td><input type="number" min="1" max="20" step="1" value="1" #quantity (change)="chanageQuantity(l,quantity.value)"/></td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <div id="total">Total : {{total() | currency:'EUR':'symbole'}}
+        <br>
+        <button *ngIf="livres != null && getCurrentUser() != null" type="button" class="btn btn-primary btn-lg" (click)="commander()">Commnder</button>
+      </div>
+      
+
+<div>
+
+
+
+
+
+</div>

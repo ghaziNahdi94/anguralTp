@@ -1,0 +1,78 @@
+
+<div id="rout">
+<form (ngSubmit)="onSubmit()" #inscriptionForm="ngForm" >
+  <div class="form-group">
+    <label for="nom">Nom:</label>
+    <input type="text" class="form-control" name="nom" id="nom"
+    pattern="^[a-zA-Z0-9]{2,}$"  #nom="ngModel" [(ngModel)]="user.nom">
+    <span class="error" [hidden]="nom.valid || nom.pristine">Le nom doit contenir au minimum 2 caractéres</span>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <label for="prenom">Prénom:</label>
+    <input type="text" class="form-control" name="prenom" id="prenom"
+    pattern="^[a-zA-Z0-9]{2,}$" #prenom="ngModel" [(ngModel)]="user.prenom">
+    <span class="error" [hidden]="prenom.valid || prenom.pristine">Le prénom doit contenir au minimum 2 caractéres</span>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="text" class="form-control" name="email" id="email" (keyup)="emailChange()"
+    pattern="[a-zA-Z0-9._%+-]{4,30}@[a-z0-9.-]+\.[a-z]{2,3}$" #email="ngModel" [(ngModel)]="user.email">
+    <span class="error" [hidden]="email.valid || email.pristine">Veuillez taper un email valide</span>
+    <span class="error" [hidden]="!exist">L'email existe déja</span>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <label for="pwd1">Mot de passe:</label>
+    <input type="password" #pass class="form-control" name="pwd1" id="pwd1"
+     pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" [(ngModel)]="user.password" #p1="ngModel">
+    <span class="error" [hidden]="p1.valid || p1.pristine">Le mot de passe doit contenir au minimum 8 caractéres compris les majuscules, les minuscule et les nombres</span>
+  </div>
+  <br>
+
+
+  <div class="form-group">
+    <label for="pwd2">Répeter mot de passe:</label>
+    <input type="password" #rep class="form-control" name="pwd2" id="pwd2"
+    [(ngModel)]="psw2" #p2="ngModel">
+    <span class="error" [hidden]=" (pass.value == rep.value)|| p2.pristine">Les mots de passe ne sont pas identiques</span>
+  </div>
+  <br>
+
+
+
+  <div class="form-group">
+    <label for="adresse">Adresse :</label>
+    <input type="text" class="form-control" name="adresse" id="adresse"
+    pattern="^[a-zA-Z0-9 ]{2,}$" #adresse="ngModel" [(ngModel)]="user.address">
+    <span class="error" [hidden]="adresse.valid || adresse.pristine">L'adresse doit contenir au minimum 20 caractéres</span>
+  </div>
+  <br>
+
+
+
+  
+<!--
+  <div class="form-group">
+    <img src="https://cdn.dribbble.com/users/112117/screenshots/3792149/avatar-dribbble_1x.png" #i width="100" height="100"/>    
+    <button class="btn btn-default btn-file">
+      Browse <input type="file" style="display: none;" (change)="i.src = hh.files[0].name" #hh>
+    </button>
+    <span class="error" [hidden]="adresse.valid || adresse.pristine">L'adresse doit contenir au minimum 20 caractéres</span>
+  </div>
+  <br>
+-->
+
+
+
+
+
+
+  <div class="btn"><button type="submit"  class="btn-primary active" [disabled]="!inscriptionForm.form.valid">Valider</button><button type="reset" class="btn-primary active">Annuler</button></div>
+
+</form>
+</div>

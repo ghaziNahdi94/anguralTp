@@ -1,0 +1,24 @@
+<ul class="list-group" [style.min-height]="getStyleListe()">
+<span *ngFor="let l of livres">
+<li  class="list-group-item" *ngIf="check(l.titre,l.genre)">
+
+ <livre 
+ [link]="l.image"
+ [auteur]="l.auteur"
+ [titre]="l.titre"
+ [prixElectronique]="l.prixElectronique"
+ [prixPhysique]="l.prixPhysique"
+ [stock]="l.quantity"
+ [genre]="l.genre"
+ [description]="l.description"
+ ></livre>
+
+</li>
+</span>
+</ul>
+
+<div  class="aucun" [style.display]="getStyleAucun()">
+            
+ Aucun élement trouvé
+                 
+</div>

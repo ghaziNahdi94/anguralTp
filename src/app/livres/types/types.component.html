@@ -1,0 +1,21 @@
+<div style="text-align : center">
+
+<div>
+<span *ngFor='let t of types;let i = index'>
+
+    <type  *ngIf="i<3" (click)="typeClick(t.title)" [url]="t.url" [title]='t.title' [description]='t.description' ></type> 
+
+</span>
+</div>
+
+
+<div>
+<span id="b" *ngFor='let t of types;let i = index'>
+    
+        <type  *ngIf="i>=3" (click)="typeClick(t.title)" [url]="t.url" [title]='t.title' [description]='t.description' ></type>
+    
+</span>
+</div>
+  
+
+</div>

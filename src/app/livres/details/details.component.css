@@ -1,0 +1,58 @@
+div{
+    display:inline-block;
+    }
+    
+    .root{
+        width: 100%;
+        min-height: 485px;
+        margin-top: 30px;
+    }
+    
+    #left{
+        float: left;
+        
+    
+    }
+    #right{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 24px;
+        max-width: 790px;
+    }
+    
+    .title{
+    color: rgb(0, 70, 128);
+        font-size: 33px;  
+    }
+    
+    .stock{
+        font-weight: normal;
+        font-size: 14px;
+    }
+    
+    button{
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 50px;
+        width: 160px;
+    }
+    
+    .btn-warning{
+        margin-left: 117px;
+    }
+    
+    .btn-info{
+        margin-left: 45px;
+    }
+    
+    .n{
+    
+    color : red;
+    
+    }
+
+    .description{
+
+        font-size: 17px;
+        color: rgb(78, 78, 78);
+
+    }

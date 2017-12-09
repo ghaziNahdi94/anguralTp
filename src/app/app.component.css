@@ -1,0 +1,148 @@
+  /* Remove the navbar's default margin-bottom and rounded borders */ 
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  
+  /* Add a gray background color and some padding to the footer */
+  footer {
+    
+    background-color: #f2f2f2;
+    padding: 25px;
+  }
+  
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    min-height:200px;
+}
+
+img {
+
+min-height: 460px;
+max-height: 460px;
+
+}
+
+
+h3{
+  color : white;
+background: black;
+  font-size: 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif'; 
+}
+p.pp{
+  color : black;
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+  background: white
+}
+
+
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none; 
+  }
+}
+
+
+footer{
+  color: white;
+  background-color: black;
+}
+
+
+
+#panier{
+min-width: 32px;  
+margin-left: 7px;
+
+
+}
+
+a{
+  cursor: pointer;
+}
+
+
+#myModal{margin-top: 60px;}
+#myModal input{color: black;}
+
+::placeholder {
+  color: rgb(3, 3, 3);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgb(3, 3, 3);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(3, 3, 3);
+}
+
+.modal-content{
+  background: rgba(0, 0, 0, 0.548);
+
+}
+
+.modal-title{
+  font-size: 34px;
+  color : white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.modal-body{
+
+margin-top: 20px;
+padding-left: 40px;
+padding-right: 40px;
+text-align: center;
+
+}
+
+
+.inscrire{
+
+  margin-left: 40px;
+  color: rgb(255, 255, 255);
+}
+
+.input-group-addon{
+  background: white;
+}
+
+.btnMd{
+
+  font-size: 17px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+
+}
+
+.error{
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+  color : rgb(255, 81, 81);
+}
+
+
+.dropdown{
+  padding-top : 15px;
+  
+}
+
+.dropdown-toggle{
+color : white;
+cursor: pointer;
+
+}
+
+
+.dropdown-menu li{
+  
+  cursor: pointer;  
+padding: 10px;
+
+}
