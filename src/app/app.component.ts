@@ -6,6 +6,8 @@ import { LivreDataService } from './livres/livres/livre-data.service';
 import { User } from '../modele/User';
 import { ResponseContentType } from '@angular/http/src/enums';
 import { Livre } from '../modele/livre';
+import * as $ from 'jquery';
+
 
 
 @Component({
@@ -225,10 +227,18 @@ goConnect(email:string,password:string) : void{
             localStorage.setItem("user",JSON.stringify(data.user));
             this.afficheError = false;
 
-            $("#myModal").modal("hide");
-            $("#email").val("");
-            $("#password").val("");
 
+
+            $("#email").val('');
+            $("#password").val('');
+
+            $('#myModal').modal("hide");
+
+            
+            
+           
+
+            
 
 
         }else{

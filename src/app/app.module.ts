@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 
+import * as $ from 'jquery';
+import * as bootstrap from "bootstrap";
+
 
 
 
