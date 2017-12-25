@@ -1,6 +1,6 @@
 
 <div id="rout">
-<form (ngSubmit)="onSubmit()" #inscriptionForm="ngForm" >
+<form (ngSubmit)="onSubmit()" #inscriptionForm="ngForm" method="POST">
   <div class="form-group">
     <label for="nom">Nom:</label>
     <input type="text" class="form-control" name="nom" id="nom"
@@ -56,23 +56,25 @@
 
 
   
-<!--
-  <div class="form-group">
-    <img src="https://cdn.dribbble.com/users/112117/screenshots/3792149/avatar-dribbble_1x.png" #i width="100" height="100"/>    
-    <button class="btn btn-default btn-file">
-      Browse <input type="file" style="display: none;" (change)="i.src = hh.files[0].name" #hh>
-    </button>
-    <span class="error" [hidden]="adresse.valid || adresse.pristine">L'adresse doit contenir au minimum 20 caractéres</span>
-  </div>
-  <br>
--->
+
+  <div class="upload-btn-wrapper" style="text-align: center; width: 100%;">
+      <img class="image" src="https://cdn.dribbble.com/users/112117/screenshots/3792149/avatar-dribbble_1x.png" width="100" height="100"/>
+      <button class="btn">Avatar</button>
+      <input type="file" name="myfile" (change)="fileChange($event)"/>
+      <br>
+    <br>
+    <br>
+    <br>
+    </div>
+ 
 
 
 
 
 
 
-  <div class="btn"><button type="submit"  class="btn-primary active" [disabled]="!inscriptionForm.form.valid">Valider</button><button type="reset" class="btn-primary active">Annuler</button></div>
+
+  <div class="btn1"><button type="submit"  class="btn-primary active" [disabled]="!inscriptionForm.form.valid">Valider</button><button type="reset" class="btn-primary active" (click)="annuler()">Annuler</button></div>
 
 </form>
 </div>

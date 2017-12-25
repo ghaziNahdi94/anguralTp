@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import { User } from '../../../modele/User';
 import { useAnimation } from '@angular/core/src/animation/dsl';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Livre } from '../../../modele/livre';
 
 
@@ -11,10 +11,11 @@ import { Livre } from '../../../modele/livre';
 @Injectable()
 export class LivreDataService {
 
-
+ 
   private urlAddUser = "http://localhost:8080/libraryAngular/UserServlet";
   private urlLogin = "http://localhost:8080/libraryAngular/LoginServlet";
   private urlLivre = "http://localhost:8080/libraryAngular/LivreServlet";
+  private urlUserLivre = "http://localhost:8080/libraryAngular/UserLivre";
 
   
   constructor(private http : HttpClient) { }
@@ -31,9 +32,24 @@ export class LivreDataService {
  } 
 
 
+ getLivresByEmail(email:string){
+
+return this.http.get(this.urlUserLivre+"?email="+email);
+
+ }
+
+commandHistorique(livres:Livre[]){
+
+  return this.http.post(this.urlUserLivre,JSON.stringify(livres));
+
+}
+
+
  command(livres:Livre[]){
 
 
+
+ 
   return this.http.post<Livre[]>(this.urlLivre,JSON.stringify(livres));
 
 
@@ -43,11 +59,13 @@ export class LivreDataService {
  addUser(user: User) {
     
 
-  return this.http.post<any>(this.urlAddUser,JSON.stringify(user));
+  return this.http.post<User>(this.urlAddUser,JSON.stringify(user));
 
 
 
   }
+
+
 
 
 

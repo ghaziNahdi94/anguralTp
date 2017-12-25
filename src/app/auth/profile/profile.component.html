@@ -1,0 +1,46 @@
+<div id="rout">
+ 
+<div id="g"> 
+<img class="img-circle" [src]="url" width="150" height="150"/>
+</div> 
+
+
+
+<div id="d">
+
+  <p id="name">{{getCurrentUser().prenom}} {{getCurrentUser().nom}}</p>
+
+
+  <p>email : {{getCurrentUser().email}}</p>
+
+  <p>adresse : {{getCurrentUser().address}}</p>
+
+  <p>Livres achetés : <span *ngIf="showAucun()">Aucun livre</span></p>
+
+</div>
+
+
+
+
+
+
+
+<div *ngIf="livres.length > 0" class="cover-container" style="background-color:rgb(0, 0, 0); margin-top:20px; width:100%;">
+    <div class="row">
+        <div class="col-md-12">
+          <ul class="horizontal-slide">
+            <li *ngFor="let l of livres" class="col-md-2"><img class="thumbnail" [src]="l.image" height="170" width="140"/></li>
+         
+          </ul>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+</div>
+

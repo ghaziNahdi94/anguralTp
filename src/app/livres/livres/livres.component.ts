@@ -84,7 +84,6 @@ export class LivresComponent implements OnInit {
 
 
 
-    console.log(this.nbrElements);
 
     return ok;
   }

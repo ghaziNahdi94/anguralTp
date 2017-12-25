@@ -6,6 +6,8 @@ import {FormsModule} from '@angular/forms';
 
 import { PanierComponent } from './panier/panier.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AuthGuardService } from './auth-guard.service';
 
 @NgModule({
   imports: [
@@ -13,6 +15,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
     FormsModule,
     AuthRoutingModule
   ],
-  declarations: [PanierComponent, InscriptionComponent]
+  declarations: [PanierComponent, InscriptionComponent, ProfileComponent],
+  providers : [AuthGuardService]
 })
 export class AuthModule { }

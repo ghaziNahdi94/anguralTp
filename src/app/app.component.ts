@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import {Router} from '@angular/router';
 import { trigger, style, animate, transition,state } from '@angular/animations';
 
@@ -34,6 +35,7 @@ import * as $ from 'jquery';
 export class AppComponent implements OnInit{
 
 
+
 user:User;
 livres : Array<Livre>;
 
@@ -65,6 +67,11 @@ ngOnInit(): void {
   this.user = JSON.parse(localStorage.getItem("user"));
 
 
+  this.dataService.getAllLivres().subscribe(
+
+    (d:any[]) =>{let ls:Livre[] = d; localStorage.setItem('ls',JSON.stringify(ls));}
+
+  );
   
 }
 
@@ -92,6 +99,15 @@ this.livres = new Array<Livre>();
 }
 
 
+
+goProfil(){
+
+  localStorage.removeItem("affiche");
+
+
+}
+
+
 logout() : void{
 
 
@@ -99,6 +115,8 @@ localStorage.removeItem("user");
 this.router.navigate(['/accueil']);
 
 }
+
+
 
 
 
@@ -209,7 +227,7 @@ private serachEnterPressed(val : string){
 
 
 
-goConnect(email:string,password:string) : void{
+goConnect(staticModal:any,email:string,password:string) : void{
 
 
   this.dataService.connect(email,password).subscribe(
@@ -232,7 +250,8 @@ goConnect(email:string,password:string) : void{
             $("#email").val('');
             $("#password").val('');
 
-            $('#myModal').modal("hide");
+            window.location.replace("http://localhost:4200/accueil");
+
 
             
             

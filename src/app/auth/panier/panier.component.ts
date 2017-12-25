@@ -34,6 +34,19 @@ livres : Livre[];
 
   commander() : void{
 
+
+    let u = this.getCurrentUser();
+
+    for(let i=0;i<this.livres.length;i++){
+
+      u.livres.push(this.livres[i].titre);
+
+    }
+
+
+    
+
+
     let k = this.livres.filter(l => {
 
       return l.choixPhysique;
@@ -44,7 +57,18 @@ livres : Livre[];
     this.data.command(k).subscribe(
 
 
-      d => {},
+      d => {
+
+
+        this.data.commandHistorique(this.livres).subscribe(
+
+          (d) => console.log("yes"),
+          (e) => console.log(e)
+    
+    
+        );
+
+      },
       er => console.log(er),
       ()=> {
 

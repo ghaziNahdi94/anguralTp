@@ -1,0 +1,45 @@
+#rout{
+
+    margin-top: 40px;
+    min-height: 485px;
+    
+    }
+
+  div{
+    display: inline-block;
+  }
+
+
+  #g{
+    float: left;
+ 
+  }
+
+
+  #d{
+
+margin-left: 150px;
+font-size: 32px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  #name{
+    font-size: 37px;
+    font-weight: bold;
+
+  }
+
+
+
+
+  .cover-container {
+    height: 230px;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+li{
+  margin-left: 80px;
+}
